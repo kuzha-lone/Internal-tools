@@ -1,0 +1,11 @@
+numpy>=1.24,<3.0
+opencv-python>=4.8,<5.0
+scenedetect[opencv]>=0.6,<0.8
+tqdm>=4.60
+yt-dlp @ git+https://github.com/yt-dlp/yt-dlp.git@master
+playwright>=1.45,<2.0
+bgutil-ytdlp-pot-provider>=1.3.1,<2.0
+faster-whisper>=1.0,<2.0
+ultralytics>=8.0,<9.0
+torch>=2.0
+torchvision>=0.15

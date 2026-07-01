@@ -1,0 +1,9 @@
+{
+  "pipeline_name": "Replace With Pipeline Name",
+  "content_source_mode": "manual_script",
+  "script_mode": "manual_script",
+  "media_method": "generated_clips",
+  "audio_mode": "none",
+  "captions_mode": "none",
+  "stage_order": []
+}

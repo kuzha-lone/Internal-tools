@@ -1,0 +1,114 @@
+{
+  "video_provider": "heygen",
+  "voice_provider": "heygen",
+  "captions_enabled": true,
+  "layout": {
+    "format": "9:16",
+    "width": 1080,
+    "height": 1920,
+    "top_half_source": "hyperframes",
+    "bottom_half_source": "heygen",
+    "top_half_height": 960,
+    "bottom_half_height": 960,
+    "top_half_viewport": {
+      "width": 1080,
+      "height": 960
+    },
+    "hyperframes_safe_zone": {
+      "width": 960,
+      "height": 890,
+      "inset_left": 60,
+      "inset_top": 35,
+      "bottom_y": 925,
+      "anchor": "centered-in-top-half",
+      "source_css": "left:60px; top:95px; width:960px; height:890px",
+      "layout_density_rule": "center-weighted dense hero frame; no hollow middle, no top-only layout, no giant empty panels"
+    },
+    "ticker_band": {
+      "top_y": 925,
+      "bottom_y": 960,
+      "rule": "reserved for the contextual moving ticker glued to the bottom of the HyperFrames viewport"
+    },
+    "bottom_half_avatar_fit": "proportional-zoom-to-fit-crop-only",
+    "hyperframes_frame": "1:1"
+  },
+  "hyperframes": {
+    "provider": "hyperframes",
+    "output_frame": "1:1",
+    "fit": "cover",
+    "position": "top-half",
+    "prompt_source": "derived-from-approved-script"
+  },
+  "avatar_rotation": {
+    "enabled": false,
+    "strategy": "daily-three-run-cycle",
+    "default_run_slot": 1,
+    "avatar_look_ids": [
+      "(insert HeyGen avatar look ID 1 here)",
+      "(insert HeyGen avatar look ID 2 here)",
+      "(insert HeyGen avatar look ID 3 here)"
+    ]
+  },
+  "assembly": {
+    "tool": "ffmpeg",
+    "ffmpeg_path": "ffmpeg",
+    "ffprobe_path": "ffprobe",
+    "stack_mode": "vertical-halves",
+    "preserve_raw_assets": true
+  },
+  "title_behavior": {
+    "mode": "auto",
+    "tone": "viral_edgy_relatable",
+    "placement": "bottom_half_lower_third_under_face",
+    "font_path": "Helvetica75 Bold/Helvetica75 Bold.ttf",
+    "font_size": 48,
+    "max_line_chars": 22,
+    "outer_margin_px": 70,
+    "horizontal_padding_px": 72,
+    "vertical_padding_px": 24,
+    "line_spacing_px": 18,
+    "text_color": "#ffffff",
+    "background_color": "#000000",
+    "background_shape": "square_corners_rectangle",
+    "never_truncate_manual_titles": true,
+    "must_fit_inside_frame": true
+  },
+  "captions": {
+    "enabled": true,
+    "stage": "after_assembly_before_speed_pass",
+    "font_path": "skills/trending-news-character-skill/subskills/talking-video-skill/assets/fonts/JetBrainsMono-Bold.ttf",
+    "font_name": "JetBrains Mono",
+    "font_size": 50,
+    "max_line_chars": 32,
+    "max_words_per_cue": 7,
+    "placement": "top_half_just_above_hyperframes_ticker",
+    "caption_zone": "above-ticker",
+    "mode": "three-word-highlight",
+    "active_word_color": "#ff003c",
+    "inactive_word_color": "#ffffff",
+    "animation": "none",
+    "transcription_provider": "auto",
+    "hyperframes_model": "small.en",
+    "style": {
+      "text_color": "#ffffff",
+      "outline_color": "#000000",
+      "outline_px": 4.6,
+      "shadow_px": 1.4
+    }
+  },
+  "render": {
+    "width": 1080,
+    "height": 1920,
+    "background": "#101010",
+    "duration_seconds_min": 15,
+    "duration_seconds_max": 30
+  },
+  "ids": {
+    "heygen_avatar_id": "(insert HeyGen avatar ID here)",
+    "heygen_talking_photo_id": "(insert HeyGen talking photo ID here)",
+    "heygen_avatar_look_id": "(insert HeyGen avatar look ID here)",
+    "heygen_voice_id": "(insert HeyGen voice ID here)",
+    "elevenlabs_voice_id": "(insert ElevenLabs voice ID here if using ElevenLabs)"
+  },
+  "reference_image_path": "skills/trending-news-character-skill/subskills/talking-video-skill/assets/reference-image.jpg"
+}

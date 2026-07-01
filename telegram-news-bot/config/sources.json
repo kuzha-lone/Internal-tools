@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Reuters World",
+    "url": "https://feeds.reuters.com/reuters/topNews",
+    "category": "world",
+    "tier": 1
+  },
+  {
+    "name": "Reuters Business",
+    "url": "https://feeds.reuters.com/reuters/businessNews",
+    "category": "markets",
+    "tier": 1
+  },
+  {
+    "name": "BBC World",
+    "url": "http://feeds.bbci.co.uk/news/world/rss.xml",
+    "category": "world",
+    "tier": 1
+  },
+  {
+    "name": "BBC Technology",
+    "url": "http://feeds.bbci.co.uk/news/technology/rss.xml",
+    "category": "technology",
+    "tier": 1
+  },
+  {
+    "name": "CNBC Top News",
+    "url": "https://www.cnbc.com/id/100003114/device/rss/rss.html",
+    "category": "markets",
+    "tier": 1
+  },
+  {
+    "name": "Al Jazeera",
+    "url": "https://www.aljazeera.com/xml/rss/all.xml",
+    "category": "world",
+    "tier": 1
+  },
+  {
+    "name": "Hacker News",
+    "url": "https://hnrss.org/frontpage",
+    "category": "technology",
+    "tier": 1
+  },
+  {
+    "name": "CoinDesk",
+    "url": "https://www.coindesk.com/arc/outboundfeeds/rss/",
+    "category": "crypto",
+    "tier": 1
+  },
+  {
+    "name": "Reddit WorldNews",
+    "url": "https://www.reddit.com/r/worldnews/.rss",
+    "category": "world",
+    "tier": 2
+  },
+  {
+    "name": "Google News",
+    "url": "https://news.google.com/rss?hl=en-IN&gl=IN&ceid=IN:en",
+    "category": "general",
+    "tier": 1
+  }
+]

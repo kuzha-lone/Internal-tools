@@ -1,0 +1,35 @@
+{
+  "default": {
+    "clips": 5,
+    "min_duration": 18,
+    "max_duration": 60,
+    "target_duration": 38,
+    "ratio": "9:16",
+    "height": 1920,
+    "wide_mode": "blur",
+    "cut_pre_roll": 0.2,
+    "cut_post_roll": 0.2,
+    "transcribe_model": "base",
+    "transcribe_device": "cpu",
+    "transcribe_compute_type": "int8"
+  },
+  "fast": {
+    "clips": 3,
+    "min_duration": 15,
+    "max_duration": 45,
+    "target_duration": 30,
+    "height": 1280,
+    "wide_mode": "blur",
+    "transcribe_model": "base"
+  },
+  "high_quality": {
+    "clips": 8,
+    "min_duration": 20,
+    "max_duration": 75,
+    "target_duration": 45,
+    "height": 1920,
+    "wide_mode": "blur",
+    "transcribe_model": "small"
+  }
+}
+

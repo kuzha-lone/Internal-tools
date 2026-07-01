@@ -1,0 +1,82 @@
+# Linux-host stack. The MT5 adapter is intentionally NOT in here -- the
+# MetaTrader5 python package needs a running MT5 terminal, which only runs
+# natively on Windows. Run services/trading-engine/mcp_server/mt5_server.py
+# on a small Windows VPS instead and point MT5_MCP_URL at it. cTrader's
+# adapter has no such constraint and runs fine in this stack.
+
+version: "3.9"
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: tradebrain
+      POSTGRES_PASSWORD: tradebrain
+      POSTGRES_DB: tradebrain
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ../services/shared/db/schema.sql:/docker-entrypoint-initdb.d/schema.sql
+    ports:
+      - "5432:5432"
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+
+  news-collector:
+    image: python:3.11-slim
+    working_dir: /app
+    volumes:
+      - ../:/app
+    command: ["python", "services/news-engine/collector/main.py"]
+    env_file: ../.env
+    depends_on: [postgres, redis]
+
+  news-mcp:
+    image: python:3.11-slim
+    working_dir: /app
+    volumes:
+      - ../:/app
+    command: ["python", "services/news-engine/mcp_server/server.py"]
+    env_file: ../.env
+    depends_on: [postgres]
+
+  content-brain:
+    image: python:3.11-slim
+    working_dir: /app
+    volumes:
+      - ../:/app
+    command: ["python", "services/news-engine/brain/agent.py"]
+    env_file: ../.env
+    depends_on: [news-mcp]
+
+  ctrader-mcp:
+    image: python:3.11-slim
+    working_dir: /app
+    volumes:
+      - ../:/app
+    command: ["python", "services/trading-engine/mcp_server/ctrader_server.py"]
+    env_file: ../.env
+    depends_on: [postgres]
+
+  trading-brain:
+    image: python:3.11-slim
+    working_dir: /app
+    volumes:
+      - ../:/app
+    command: ["python", "services/trading-engine/brain/decision_engine.py"]
+    env_file: ../.env
+    depends_on: [postgres, news-mcp]
+
+  social-distribution:
+    image: python:3.11-slim
+    working_dir: /app
+    volumes:
+      - ../:/app
+    command: ["python", "services/social-distribution/scheduler.py"]
+    env_file: ../.env
+    depends_on: [postgres]
+
+volumes:
+  pgdata:

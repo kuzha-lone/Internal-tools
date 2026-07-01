@@ -1,0 +1,7 @@
+interface:
+  display_name: "Clipping Skill"
+  short_description: "Cut long videos into vertical clip assets"
+  default_prompt: "Use $clipping-skill to turn this video URL or local file into vertical short-form clip assets."
+policy:
+  allow_implicit_invocation: true
+

@@ -1,0 +1,25 @@
+{
+  "rss_feeds": [
+    {
+      "name": "Google News - Finance",
+      "url": "https://news.google.com/rss/search?q=finance+markets&hl=en&gl=US&ceid=US:en",
+      "category": "economy",
+      "poll_interval_seconds": 120
+    },
+    {
+      "name": "CoinTelegraph",
+      "url": "https://cointelegraph.com/rss",
+      "category": "crypto",
+      "poll_interval_seconds": 180
+    },
+    {
+      "name": "Reuters Top News",
+      "url": "https://feeds.reuters.com/reuters/topNews",
+      "category": "economy",
+      "poll_interval_seconds": 180
+    }
+  ],
+  "telegram_channels": [
+    {"name": "ForexLive", "username": "ForexLive", "poll_interval_seconds": 60}
+  ]
+}
